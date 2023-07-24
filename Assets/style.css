@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: auto;
+  padding: 5px;
+}
+
+/* Top Bar containing button and timer */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lumanosimo', cursive;
+
+}
+
+/* Background image in Body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(Images/IMG_0514.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center; 
+}
+
+/* Button Tab style */
+.button {
+  background:rgb(139, 196, 250);
+  border-radius: 20px;
+  padding: 10px;
+  cursor:grab;
+  margin-bottom: 10px;
+  font-family: 'Lumanosimo', cursive;
+
+}
+
+/* Timer style in top right corner */
+#timer {
+  background:rgb(139, 196, 250);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+
