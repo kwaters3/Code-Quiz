@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Challenge Your Knowledge</title>
-		<link rel="stylesheet" href="Assets/style.css">
-		<link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
-	</head>
 
-	<body>
-		<header>
-			<div class="header">
-					<!--High Score button on Left Corner-->
-					<div>
-							<button class="button" id="view highscores">Check Highscores</button>
-					</div>
-					<!--Timer tab on Right corner-->
-					<div>
-							<p id="timer"> Time left: 90 s</p>
-					</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Challenge Your Knowledge</title>
+	<link rel="stylesheet" href="Assets/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<div class="header">
+			<!--High Score button on Left Corner-->
+			<div>
+				<button class="button" id="view highscores">Check Highscores</button>
 			</div>
-		</header>
-		
-		<main>
+			<!--Timer tab on Right corner-->
+			<div>
+				<p id="timer"> Time left: 90 s</p>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="app">
+			<!--Introduction Section  -->
+			<section class="intro">
+				<h1> Coding Quiz Challenge</h1>
+				<hr>
+					<p id="instruction">
+						Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+						will penalize your score/time by ten seconds!
+					</p>
+				<button class="button" id="start_button">Start Quiz</button>
+			</section>
+
 			
-		</main>
-		
-		<script src="java.js"></script>
-	</body>
+			<!--Question Section -->
+			<section class="quiz">
+					<h2 id="question">Question will go here</h2>
+					<hr>
+					<div id="answer-buttons">
+						<button class="btn">Answer 1</button>
+						<button class="btn">Answer 2</button>
+						<button class="btn">Answer 3</button>
+						<button class="btn">Answer 4</button>
+					</div>
+
+			</section>
+
+		</div>
+	</main>
+
+	<script src="Assets/script.js"></script>
+</body>
+
 </html>

@@ -28,15 +28,15 @@ body {
   background-image: url(Images/IMG_0514.JPG);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:center; 
+  background-position: center;
 }
 
 /* Button Tab style */
 .button {
-  background:rgb(139, 196, 250);
+  background: rgb(139, 196, 250);
   border-radius: 20px;
   padding: 10px;
-  cursor:grab;
+  cursor: grab;
   margin-bottom: 10px;
   font-family: 'Lumanosimo', cursive;
 
@@ -44,11 +44,50 @@ body {
 
 /* Timer style in top right corner */
 #timer {
-  background:rgb(139, 196, 250);
+  background: rgb(139, 196, 250);
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 10px;
 }
 
+main {
+  text-align: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.app {
+  background: rgb(139, 196, 250, .55);
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto 0;
+  border-radius: 20px;
+  padding: 30px;
+  border: black solid 5px;
+  justify-content: center;
+  flex: 1 0 auto;
+
+}
+
+hr {
+  border: black solid 3px;
+}
+
+main p {
+  font-size: 30px;
+  font-weight: 550;
+  padding-bottom: 40px;
+}
+
+main .button {
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.822);
+}
 
 
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+}
