@@ -39,7 +39,10 @@ body {
   cursor: grab;
   margin-bottom: 10px;
   font-family: 'Lumanosimo', cursive;
+}
 
+.button:hover{
+  background: rgba(5, 13, 20, 0.469);
 }
 
 /* Timer style in top right corner */
@@ -78,7 +81,7 @@ hr {
 main p {
   font-size: 30px;
   font-weight: 550;
-  padding-bottom: 40px;
+  padding: 40px;
 }
 
 main .button {
@@ -90,4 +93,29 @@ main .button {
 h1 {
   font-size: 50px;
   font-weight: 800;
+}
+
+.quiz {
+  padding: 50px;
+}
+
+.quiz h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.btn {
+  background: rgba (255, 255, 255, 0.822);
+  font-weight: 600;
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 20px;  
+  padding: 10px;
+  margin: 15px 0;
+  text-align: left;
+  cursor: grabbing;
+}
+
+.btn:hover{
+  background: rgba(5, 13, 20, 0.469);
 }
