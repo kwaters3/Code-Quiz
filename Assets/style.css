@@ -29,6 +29,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 
 /* Button Tab style */
@@ -39,6 +40,7 @@ body {
   cursor: grab;
   margin-bottom: 10px;
   font-family: 'Lumanosimo', cursive;
+  transition: all 0.5s;
 }
 
 .button:hover{
@@ -114,8 +116,28 @@ h1 {
   margin: 15px 0;
   text-align: left;
   cursor: grabbing;
+  transition: all 0.5s;
 }
 
 .btn:hover{
   background: rgba(5, 13, 20, 0.469);
+}
+
+#next-btn {
+  background: rgba(5, 13, 20, 0.469);
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+  width: auto;
+  border: 0;
+  padding: 10px;
+  margin: 50px auto 0;
+  border-radius: 10px;
+  cursor: grab;
+  transition: all 0.5s;
+ 
+}
+
+#next-btn:hover {
+  background-color: rgba(255, 255, 255, 0.37);
 }
