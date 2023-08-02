@@ -54,11 +54,14 @@ function countDown() {
   }, 500); 
 }
 
+
 function gameOver() {
   resetState();
   questionElement.innerHTML = `Game Over! Your final score is ${score} out of ${questions.length}!`;
   showScore();
 }
+
+
 function showScore() {
   resetState();
   questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!<br>Enter your initials: <input type="text" id="initials-input">`;
@@ -67,6 +70,7 @@ function showScore() {
   nextButton.style.display = "block";
   saveScore();
 }
+
 
 // This removes the Answer 1,2,3,4 choices from the HTML
 function resetState (){
@@ -107,6 +111,8 @@ function pressNextButton() {
 nextButton.addEventListener("click", () => {
   pressNextButton(); 
 });
+
+
 
 //////////////////////////////////////////////////////////////
 // Question Elements
