@@ -80,6 +80,7 @@ const questions = [
   }
 ];
 
+// variables defined
 const startButton = document.getElementById("start-button");
 const introSection = document.querySelector(".intro");
 const quizSection = document.querySelector(".quiz");
@@ -162,7 +163,7 @@ function pressNextButton() {
     showQuestion();
   } else {
     showScore();
-    };
+    }
   }
 
 nextButton.addEventListener("click", () => {
