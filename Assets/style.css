@@ -99,6 +99,7 @@ h1 {
 
 .quiz {
   padding: 50px;
+  display: none;
 }
 
 .quiz h2 {
@@ -142,4 +143,3 @@ h1 {
 #next-btn:hover {
   background-color: rgba(255, 255, 255, 0.37);
 }
-
