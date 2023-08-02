@@ -81,7 +81,9 @@ const questions = [
 ];
 
 const startButton = document.getElementById("start-button");
-const questionElement = document.getElementById("question");
+const introSection = document.querySelector(".intro");
+const quizSection = document.querySelector(".quiz");
+const questionElement = document.getElementById ("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
@@ -90,3 +92,20 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 
+// when you click the start quiz button, this will take you to the question page
+function startQuiz() {
+  introSection.style.display = "none"; // this Hides the introduction section
+  quizSection.style.display = "block"; // This Shows the quiz section
+  showQuestion();
+}
+
+
+
+
+
+
+
+
+
+// this generates the onclick for the start button
+startButton.addEventListener("click", startQuiz);
