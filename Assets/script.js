@@ -126,11 +126,12 @@ function resetState (){
   }
 }
 
-function selectAnswer(a){
-  const selectedBtn = a.target;
+function selectAnswer(event){
+  const selectedBtn = event.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect){
-    selectedBtn.classList.add("correct"); 
+    selectedBtn.classList.add("correct");
+    score++; 
   }else {
     selectedBtn.classList.add("wrong");
   }
@@ -148,27 +149,46 @@ function selectAnswer(a){
 // this generates the onclick for the start button
 startButton.addEventListener("click", startQuiz);
 
-
-function showScore(){
+function showScore() {
   resetState();
   questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Click to Play Again";
+  nextButton.innerHTML = "Play Again";
   nextButton.style.display = "block";
 }
 
-function pressNextButton (){
-currentQuestionIndex++;
-if(currentQuestionIndex < questions.length){
-  showQuestion();
-}else{
-  showScore();
-}
+function pressNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
 }
 
 nextButton.addEventListener("click", () => {
-  if(currentQuestionIndex < questions.length){
-    pressNextButton();
-  }else{
-    startQuiz();
-  }
+  pressNextButton(); // Always move to the next question or show score
 });
+
+// function showScore(){
+//   resetState();
+//   questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!`;
+//   nextButton.innerHTML = "Click to Play Again";
+//   nextButton.style.display = "block";
+// }
+
+// function pressNextButton (){
+// currentQuestionIndex++;
+// if(currentQuestionIndex < questions.length){
+//   showQuestion();
+// }else{
+//   showScore();
+// }
+// }
+
+// nextButton.addEventListener("click", () => {
+//   if(currentQuestionIndex < questions.length){
+//     pressNextButton();
+//   }else{
+//     startQuiz();
+//   }
+// });
