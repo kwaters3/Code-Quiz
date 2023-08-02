@@ -54,7 +54,7 @@ const questions = [
     answers: [
       {text: "object", correct: false},
       {text: "null", correct: true},
-      {text: "undefined", correct: true},
+      {text: "undefined", correct: false},
       {text: "string", correct: false},
     ]
   },
@@ -102,8 +102,6 @@ function startQuiz() {
 // This is the Question button
 function showQuestion () {
   resetState ();
-  currentQuestionIndex = 0;
-  score = 0;
   nextButton.innerHTML = "Next Question"
   let currentQuestion = questions[currentQuestionIndex];
   let questionNum = currentQuestionIndex + 1;
@@ -137,13 +135,40 @@ function selectAnswer(a){
     selectedBtn.classList.add("wrong");
   }
 
+  Array.from(answerButtons.children).forEach(button => {
+    if(button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  })
+  nextButton.style.display = "block";
 }
-
-
-
-
-
 
 
 // this generates the onclick for the start button
 startButton.addEventListener("click", startQuiz);
+
+
+function showScore(){
+  resetState();
+  questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!`;
+  nextButton.innerHTML = "Click to Play Again";
+  nextButton.style.display = "block";
+}
+
+function pressNextButton (){
+currentQuestionIndex++;
+if(currentQuestionIndex < questions.length){
+  showQuestion();
+}else{
+  showScore();
+}
+}
+
+nextButton.addEventListener("click", () => {
+  if(currentQuestionIndex < questions.length){
+    pressNextButton();
+  }else{
+    startQuiz();
+  }
+});
