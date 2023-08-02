@@ -4,33 +4,28 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Challenge Your Knowledge</title>
 	<link rel="stylesheet" href="Assets/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+	<title>Challenge Your Knowledge</title>
 </head>
-
 <body>
 	<header>
-		<div class="header">
+		<h1>JavaScript Brain Teasers</h1>
+		<br>
 			<!--High Score button on Left Corner-->
-			<div>
-				<button class="button" id="view highscores">Check Highscores</button>
-			</div>
+				<!-- <button class="button" id="score">Check Highscores</button> -->
+				<br>
 			<!--Timer tab on Right corner-->
-			<div>
-				<p id="timer"> Time left: 90 s</p>
-			</div>
-		</div>
+				<h2 id="timer">Time: <span id ="time-remaining">60</span> seconds</h2>
+			
 	</header>
-
+	
 	<main>
-		<div class="app">
+		<div class="quiz-box">
 			<!--Introduction Section  -->
 			<section class="intro">
-				<h1> Coding Quiz Challenge</h1>
-				<hr>
-					<p id="instruction">
-						Try your best to answer the following code-related questions in the allotted time. Do note that incorrect answers
+					<p>
+						Try to answer the following questions in 60 seconds. Do note that incorrect answers
 						will deduct your score and time by ten seconds!
 					</p>
 				<button class="button" id="start-button">Start Quiz</button>
@@ -49,7 +44,6 @@
 						</div>
 					<button id="next-btn">Next Question</button>	
 			</section>
-
 		</div>
 	</main>
 

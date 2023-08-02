@@ -1,3 +1,115 @@
+// variables defined
+const startButton = document.getElementById("start-button");
+const introSection = document.querySelector(".intro");
+const quizSection = document.querySelector(".quiz");
+const questionElement = document.getElementById ("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+const timeRemainingElement = document.getElementById("time-remaining");
+
+
+let currentQuestionIndex = 0;
+let score = 0;
+let timeRemaining = 60
+
+
+// when you click the start quiz button, this will take you to the question page
+// this generates the onclick for the start button
+startButton.addEventListener("click", startQuiz);
+function startQuiz() {
+  introSection.style.display = "none";
+  quizSection.style.display = "block";
+  countDown(); // Start the countdown timer
+  showQuestion();
+}
+
+// This is the Question button
+function showQuestion () {
+  resetState ();
+  nextButton.innerHTML = "Next Question"
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNum = currentQuestionIndex + 1;
+  questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
+
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerButtons.appendChild(button);
+    if(answer.correct){
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+  });
+}
+
+function countDown() {
+  const timer = setInterval(function () {
+    timeRemaining--;
+    timeRemainingElement.textContent = timeRemaining;
+    if (timeRemaining <= 0 || currentQuestionIndex >= questions.length) {
+      clearInterval(timer);
+      gameOver();
+    }
+  }, 500); 
+}
+
+function gameOver() {
+  resetState();
+  questionElement.innerHTML = `Game Over! Your final score is ${score} out of ${questions.length}!`;
+  showScore();
+}
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!<br>Enter your initials: <input type="text" id="initials-input">`;
+  nextButton.innerHTML = "Save Score";
+  nextButton.addEventListener("click", saveScore);
+  nextButton.style.display = "block";
+  saveScore();
+}
+
+// This removes the Answer 1,2,3,4 choices from the HTML
+function resetState (){
+  nextButton.style.display = "none";
+  while(answerButtons.firstChild){answerButtons.removeChild(answerButtons.firstChild);
+  }
+}
+
+function selectAnswer(event){
+  const selectedBtn = event.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  if (isCorrect){
+    selectedBtn.classList.add("correct");
+    score++; 
+  }else {
+    selectedBtn.classList.add("wrong");
+  }
+
+  Array.from(answerButtons.children).forEach(button => {
+    if(button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  })
+  nextButton.style.display = "block";
+}
+
+
+function pressNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      gameOver();
+    }
+  }
+
+nextButton.addEventListener("click", () => {
+  pressNextButton(); 
+});
+
+//////////////////////////////////////////////////////////////
+// Question Elements
 const questions = [
   {
     question: "What is JavaScript?",
@@ -79,93 +191,3 @@ const questions = [
     ]
   }
 ];
-
-// variables defined
-const startButton = document.getElementById("start-button");
-const introSection = document.querySelector(".intro");
-const quizSection = document.querySelector(".quiz");
-const questionElement = document.getElementById ("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-
-// when you click the start quiz button, this will take you to the question page
-function startQuiz() {
-  introSection.style.display = "none"; // this Hides the introduction section
-  quizSection.style.display = "block"; // This Shows the quiz section
-  showQuestion();
-}
-
-// This is the Question button
-function showQuestion () {
-  resetState ();
-  nextButton.innerHTML = "Next Question"
-  let currentQuestion = questions[currentQuestionIndex];
-  let questionNum = currentQuestionIndex + 1;
-  questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
-
-  currentQuestion.answers.forEach(answer => {
-    const button = document.createElement("button");
-    button.innerHTML = answer.text;
-    button.classList.add("btn");
-    answerButtons.appendChild(button);
-    if(answer.correct){
-      button.dataset.correct = answer.correct;
-    }
-    button.addEventListener("click", selectAnswer);
-  });
-}
-
-// This removes the Answer 1,2,3,4 choices from the HTML
-function resetState (){
-  nextButton.style.display = "none";
-  while(answerButtons.firstChild){answerButtons.removeChild(answerButtons.firstChild);
-  }
-}
-
-function selectAnswer(event){
-  const selectedBtn = event.target;
-  const isCorrect = selectedBtn.dataset.correct === "true";
-  if (isCorrect){
-    selectedBtn.classList.add("correct");
-    score++; 
-  }else {
-    selectedBtn.classList.add("wrong");
-  }
-
-  Array.from(answerButtons.children).forEach(button => {
-    if(button.dataset.correct === "true"){
-      button.classList.add("correct");
-    }
-    button.disabled = true;
-  })
-  nextButton.style.display = "block";
-}
-
-
-// this generates the onclick for the start button
-startButton.addEventListener("click", startQuiz);
-
-function showScore() {
-  resetState();
-  questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Add Your Initials to Save Your Score";
-  nextButton.style.display = "block";
-}
-
-function pressNextButton() {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    showQuestion();
-  } else {
-    showScore();
-    }
-  }
-
-nextButton.addEventListener("click", () => {
-  pressNextButton(); 
-});
