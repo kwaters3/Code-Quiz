@@ -152,7 +152,7 @@ startButton.addEventListener("click", startQuiz);
 function showScore() {
   resetState();
   questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Play Again";
+  nextButton.innerHTML = "Add Your Initials to Save Your Score";
   nextButton.style.display = "block";
 }
 
@@ -162,33 +162,9 @@ function pressNextButton() {
     showQuestion();
   } else {
     showScore();
+    };
   }
-}
 
 nextButton.addEventListener("click", () => {
-  pressNextButton(); // Always move to the next question or show score
+  pressNextButton(); 
 });
-
-// function showScore(){
-//   resetState();
-//   questionElement.innerHTML = `Your score is ${score} out of ${questions.length}!`;
-//   nextButton.innerHTML = "Click to Play Again";
-//   nextButton.style.display = "block";
-// }
-
-// function pressNextButton (){
-// currentQuestionIndex++;
-// if(currentQuestionIndex < questions.length){
-//   showQuestion();
-// }else{
-//   showScore();
-// }
-// }
-
-// nextButton.addEventListener("click", () => {
-//   if(currentQuestionIndex < questions.length){
-//     pressNextButton();
-//   }else{
-//     startQuiz();
-//   }
-// });
