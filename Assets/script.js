@@ -99,7 +99,45 @@ function startQuiz() {
   showQuestion();
 }
 
+// This is the Question button
+function showQuestion () {
+  resetState ();
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Next Question"
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNum = currentQuestionIndex + 1;
+  questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
 
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerButtons.appendChild(button);
+    if(answer.correct){
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+  });
+}
+
+// This removes the Answer 1,2,3,4 choices from the HTML
+function resetState (){
+  nextButton.style.display = "none";
+  while(answerButtons.firstChild){answerButtons.removeChild(answerButtons.firstChild);
+  }
+}
+
+function selectAnswer(a){
+  const selectedBtn = a.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  if (isCorrect){
+    selectedBtn.classList.add("correct"); 
+  }else {
+    selectedBtn.classList.add("wrong");
+  }
+
+}
 
 
 
