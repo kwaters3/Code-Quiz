@@ -1,7 +1,7 @@
 # JavaScript Brain Teasers
 A coding assessment that includes a timed coding quiz with multiple choice questions. 
 <br>
-![Click Here to take you to the link (https://kwaters3.github.io/Code-Quiz/)]
+[Click Here to Take the Quiz] (https://kwaters3.github.io/Code-Quiz/)
 
 ## Webpage Preview
 ![Screenshot](Assets/Images/Screenshot_2023-08-09_14-49-44.png)
