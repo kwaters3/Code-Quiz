@@ -1,5 +1,8 @@
-# Code-Quiz
-A coding assessment that includes a timed coding quiz with multiple choice questions.
+# JavaScript Brain Teasers
+A coding assessment that includes a timed coding quiz with multiple choice questions. 
+
+## Webpage Preview
+![Screenshot](Assets/Images/Screenshot_2023-08-09_14-49-44.png)
 
 ## User Story
 
@@ -24,3 +27,12 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+
+## How to Use
+
+Test your knowledge on basic Javascript coding questions in 60 seconds. 
+The timer begins once you click the start button, for every wrong answer choice, the timer will deduct 10 seconds from the clock. 
+Correct answers will be displayed if a wrong answer is selected. 
+Final score will be displayed once the quiz is done or the time runs out. 
+You can save your score at the end of the game. 
+Good Luck!
