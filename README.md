@@ -1,5 +1,6 @@
 # JavaScript Brain Teasers
 A coding assessment that includes a timed coding quiz with multiple choice questions. 
+Click on the link to take you to the Quiz: (https://kwaters3.github.io/Code-Quiz/)
 
 ## Webpage Preview
 ![Screenshot](Assets/Images/Screenshot_2023-08-09_14-49-44.png)
@@ -36,3 +37,12 @@ Correct answers will be displayed if a wrong answer is selected.
 Final score will be displayed once the quiz is done or the time runs out. 
 You can save your score at the end of the game. 
 Good Luck!
+
+
+## Credits
+
+-[GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8) Information Video on JavaScript and functions
+
+-[BroCode](https://www.youtube.com/watch?v=8dWL3wF_OMw&t=2499s) Information Video on JavaScript
+
+-[W3Schools](https://www.w3schools.com/js/default.asp) Information on JavaScript 

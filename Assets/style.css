@@ -1,9 +1,8 @@
 * {
   box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* Background display */
 body {
@@ -28,19 +27,19 @@ main {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 200px;
-  margin-right: 200px;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-
 .quiz-box {
-  background: rgb(139, 196, 250, .55);
+  background: rgba(139, 196, 250, 0.55);
   width: 90%;
   max-width: 900px;
   margin: 50px auto 0;
   border-radius: 20px;
   padding: 30px;
+  text-align: center;
 }
 
 /* Line below question and text */
@@ -48,20 +47,16 @@ hr {
   border: black solid 3px;
 }
 
-
 h1 {
   font-size: 50px;
   font-weight: 800;
 }
-
 
 main p {
   font-size: 30px;
   font-weight: 550;
   padding: 40px;
 }
-
-
 
 .quiz {
   padding: 50px;
@@ -73,41 +68,36 @@ main p {
   font-weight: 600;
 }
 
-
-/* Button style for Check highscore and Start quiz*/
+/* Button style for Start quiz */
 .button {
-  background: rgb(139, 196, 250);
+  background: rgba(139, 196, 250);
   border-radius: 20px;
   padding: 10px;
   cursor: grab;
   margin-bottom: 10px;
   font-family: 'Lumanosimo', cursive;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
-
 
 main .button {
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.822);
 }
 
-
 .button:hover {
   background: rgba(5, 13, 20, 0.469);
 }
 
-
 /* Timer */
 #timer {
-  background: rgb(139, 196, 250);
+  background: rgba(139, 196, 250);
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 10px;
-} 
-
+}
 
 .btn {
-  background: rgba (255, 255, 255, 0.822);
+  background: rgba(255, 255, 255, 0.822);
   font-weight: 600;
   width: 100%;
   border: 3px solid black;
@@ -116,7 +106,7 @@ main .button {
   margin: 15px 0;
   text-align: left;
   cursor: grabbing;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .btn:hover {
@@ -134,10 +124,9 @@ main .button {
   margin: 50px auto 0;
   border-radius: 10px;
   cursor: grab;
-  transition: all 0.5s;
+  transition: all 0.3s;
   display: none;
 }
-
 
 #next-btn:hover {
   background-color: rgba(255, 255, 255, 0.37);
@@ -149,4 +138,33 @@ main .button {
 
 .wrong {
   background: rgba(255, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 350px) {
+  .quiz-box {
+    padding: 20px;
+  }
+
+  .quiz h2 {
+    font-size: 24px;
+  }
+
+  main p {
+    font-size: 16px;
+    padding: 20px 0;
+  }
+
+  .btn {
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 8px;
+  }
+
+  .correct {
+    background: rgba(0, 128, 0, 0.5);
+  }
+
+  .wrong {
+    background: rgba(255, 0, 0, 0.5);
+  }
 }
